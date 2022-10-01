@@ -1,19 +1,19 @@
 function draw() {
-    const canvas = document.getElementById('canvas');
-    if (canvas.getContext) {
-        const ctx = canvas.getContext('2d');
-        ctx.beginPath();
-        for (let i=0; i<26; i++)
-        {
-            for (let j=0; j<10;j++)
-            {
-                ctx.rect(10, 10, 10, 10);
-                ctx.rect(25, 10, 10, 10);
-                break;
+    var calendar = document.getElementById('calendar')
+    var decades = 8
+    var years = 10
+    var weeks = 52
+    for (let decade=0; decade<decades; decade++){
+        var d = document.createElement('div')
+        d.className = 'decade'
+        for (let year=0; year<years; year++){
+            for(let week=0; week<weeks; week++){
+                var square = document.createElement('div')
+                square.className = 'square'
+                d.appendChild(square)
+                console.log('test')
             }
-            break;
         }
-        ctx.stroke();
-       
+        calendar.appendChild(d)
     }
   }
