@@ -6,7 +6,6 @@ header, footer{
 #calendar{
     width: 60%;
     margin:auto;
-    border: 1px solid;
 }
 
 .line {
@@ -18,8 +17,8 @@ header, footer{
 .decade {
     position:relative;  
     display: grid;
-    grid-template-columns: repeat(52, auto);
-    width: 90%;
+    grid-template-columns: repeat(53, auto);
+    width: 85%;
     margin:auto;
     margin-bottom: 10px;
     /* border: 1px solid black; */
@@ -33,7 +32,7 @@ header, footer{
     display: grid;
     grid-template-columns: repeat(26, auto);
     /* border: 1px solid black; */
-    margin: 4px;
+    /* margin: 2px; */
 }
 
 .square {
@@ -42,6 +41,10 @@ header, footer{
     height: 10px;
     width: 10px;
     margin: 2px;
+}
+.number {
+    border: none;
+    font-size: 10px;
 }
 
 .square-white {

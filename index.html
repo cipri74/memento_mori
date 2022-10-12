@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="draw();">
+<body onload="main();">
     <header class="text-center">
-        <h1 id="calendar-title" >Memento Mori Calendar</h1>
+        <h1 id="calendar-title">Memento Mori Calendar</h1>
     </header>
+    <label for="birth"></label>
+    <input type="date" name="birth" id="date-input">
+    <button id="date-button">Press</button>
     <div id="calendar">
     </div>
     <footer class="text-center">
