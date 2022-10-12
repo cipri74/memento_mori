@@ -29,6 +29,7 @@ function draw_calendar() {
 }
 
 function fill_calendar(e) {
+    // TODO clean_calendar()
     let squares = document.getElementsByClassName('square')
     let current_date = new Date()
     let date = document.getElementById('date-input')
@@ -41,7 +42,7 @@ function fill_calendar(e) {
             console.log('Future Date')
         }
         else{
-            let age_in_days = Math.ceil((current_date - date) / (1000 * 60 * 60 * 24 * 7))
+            let age_in_days = Math.ceil((current_date - date) / (1000 * 60 * 60 * 24 * 7)) // TODO correct formula
             for (let i=0;i<squares.length; i++){
                 age_in_days--
                 
