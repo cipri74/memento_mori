@@ -14,42 +14,44 @@ function draw_calendar() {
                 d.appendChild(square)
             }
             var index = document.createElement('div')
-            // index.classList.add('square')
             index.classList.add('number')
             if (calendar_age % 5 == 0 || calendar_age == 1){
                 index.innerText = calendar_age
             }
-            
             calendar_age ++
             d.appendChild(index)
         }
-
         calendar.appendChild(d)
     }
 }
 
-function fill_calendar(e) {
-    // TODO clean_calendar()
+function clean_calendar(){
     let squares = document.getElementsByClassName('square')
-    let current_date = new Date()
-    let date = document.getElementById('date-input')
-    if (date.value === ''){
+    for (let i=0;i<squares.length; i++){
+        squares[i].classList.remove('square-black')
+    } 
+}
+
+function fill_calendar() {
+    clean_calendar()
+    let birth_date = document.getElementById('date-input')
+    if (birth_date.value === ''){
         console.log('Nothing')
+        return 
     }
-    else{
-        date = Date.parse(date.value)
-        if (date >= current_date){
-            console.log('Future Date')
-        }
-        else{
-            let age_in_days = Math.ceil((current_date - date) / (1000 * 60 * 60 * 24 * 7)) // TODO correct formula
-            for (let i=0;i<squares.length; i++){
-                age_in_days--
-                
-                squares[i].classList.add('square-black');
-                if (age_in_days == 0) break
-            } 
-        }
+    let current_date = new Date()
+    birth_date = Date.parse(birth_date.value)
+    let age = Math.floor(Math.floor((current_date.getTime() - birth_date) / (1000 * 60 * 60 * 24)) / 7)
+    if (age <= 0){
+        console.log('Future Date')
+        return
+    }
+    console.log(age)
+    let squares = document.getElementsByClassName('square')
+    for (let i=0;i<squares.length; i++){
+        age--
+        squares[i].classList.add('square-black');
+        if (age == 0) return
     }
 }
 
