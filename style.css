@@ -3,8 +3,14 @@ header, footer{
     color:white;
     margin: 10px;
 }
+
+#date-container{
+    margin-bottom: 10px;
+}
+
+
 #calendar{
-    width: 50%;
+    width: 600px;
     margin:auto;
 }
 
@@ -12,9 +18,9 @@ header, footer{
     position:relative;  
     display: grid;
     grid-template-columns: repeat(53, auto);
-    width: 60%;
-    margin:auto;
+    width: 100%;
     margin-bottom: 10px;
+
 }
 
 .square {
